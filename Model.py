@@ -1,8 +1,9 @@
-# import subprocess
-# subprocess.run(["pip", "install", "joblib"])
+import subprocess
+subprocess.run(["pip", "install", "joblib"])
 
 import numpy as np
 import streamlit as st
+import joblib
 
 
 model = joblib.load('Housing_Model.joblib')
