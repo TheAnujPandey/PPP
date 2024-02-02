@@ -1,6 +1,7 @@
 import numpy as np
 import streamlit as st
 import joblib
+!pip install joblib
 
 model = joblib.load('Housing_Model.joblib')
 
