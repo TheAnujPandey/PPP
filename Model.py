@@ -1,14 +1,21 @@
-import subprocess
-subprocess.run(["pip", "install", "joblib"])
+# Model.py
 
+import subprocess
+import sys
+
+# Install joblib if not installed
+try:
+    import joblib
+except ImportError:
+    subprocess.run([sys.executable, "-m", "pip", "install", "joblib"])
+    import joblib
+
+# Rest of the imports
 import numpy as np
 import streamlit as st
-import joblib
 
-
-model = joblib.load('Housing_Model.joblib')
-
-# features = np.array([0.36234185, -0.49612729, 0.1201202, -0.07890437, -1.39536133, -0.4020606, 1.06076002, 0.0])
+# Load the model
+model = joblib.load('Housing_Model.joblib')# features = np.array([0.36234185, -0.49612729, 0.1201202, -0.07890437, -1.39536133, -0.4020606, 1.06076002, 0.0])
 # features = features.reshape(1, -1)  
 
 # print ("predicted values", model.predict)
